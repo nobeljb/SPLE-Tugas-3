@@ -6,6 +6,7 @@ import aisco.financialreport.core.FinancialReport;
 import aisco.financialreport.FinancialReportFactory;
 import aisco.donation.core.Donation;
 import aisco.donation.DonationFactory;
+import aisco.sponsor.core.SponsorComponent;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -60,6 +61,13 @@ public class CharitySchoolMedia {
         donate.getDonation();
     }
 
+    public static void addSponsor()
+    {
+        SponsorComponent sponsorCore = new aisco.sponsor.core.SponsorImpl(1, "Media Partner", "Media");
+        aisco.sponsor.finansial.SponsorImpl sponsorFinansial = new aisco.sponsor.finansial.SponsorImpl(sponsorCore, 5000000.0);
+        sponsorFinansial.processContribution();
+    }
+
     public static void main(String[] args) {
         System.out.println ("Product Charity School with Sponsor Media");
         List<Program> programs = addProgram();
@@ -76,6 +84,7 @@ public class CharitySchoolMedia {
         int totalexpense = ((aisco.financialreport.expense.FinancialReportImpl) expense1).total(expenses);
 
         addDonation();
+        addSponsor();
         int balance = totalincome-totalexpense;
         System.out.println("Balance: "+balance);
     }

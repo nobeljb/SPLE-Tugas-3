@@ -2,6 +2,8 @@ module aisco.product.charityschoolmedia {
     requires aisco.program.core;
     requires aisco.financialreport.core;
     requires aisco.donation.core;
+    requires aisco.sponsor.core;
+    requires aisco.sponsor.finansial;
 
     requires aisco.program.activity;
     requires aisco.program.operational;
