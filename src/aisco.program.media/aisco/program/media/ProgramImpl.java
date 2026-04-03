@@ -20,6 +20,6 @@ public class ProgramImpl extends ProgramDecorator {
     }
 
     public String toString() {
-        return program + ", Sponsor Media: " + media + " (Sponsor yang memberikan bantuan untuk mempromosikan program).";
+        return program + ", Sponsor Media: " + media + " (Sponsor yang memberikan bantuan untuk mempromosikan program)";
     }
 }
